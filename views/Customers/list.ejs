@@ -1,0 +1,33 @@
+<h2>Customer List</h2>
+
+<table class="mui-table mui-table--bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Membership Type</th>
+        <th>Guest Passes</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% customers.forEach(customer => { %>
+        <tr>
+            <td><%= customer.name %></td>
+            <td><%= customer.address %></td>
+            <td><%= customer.membership_type %></td>
+            <td><%= customer.guest_passes %></td>
+            <td>
+                <form action="/customers/use-guest-pass/<%= customer.customer_id %>" method="POST" style="display:inline;">
+                    <button type="submit" class="mui-btn mui-btn--small mui-btn--primary">Use Guest Pass</button>
+                </form>
+                <form action="/customers/delete/<%= customer.customer_id %>" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this customer?');">
+                    <button type="submit" class="mui-btn mui-btn--small mui-btn--danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+<a href="/customers/add" class="mui-btn mui-btn--primary">Add New Customer</a>

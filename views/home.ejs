@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit Kwick<%= locals.title ? ' - ' + title : '' %></title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<header>
-    <div class="container">
-        <h1>Fit Kwick</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/customers">Customers</a></li>
-                <li><a href="/bookings">Bookings</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<h2>Welcome to Fit Kwick</h2>
 
-<main class="container">
-    <%- body %>
-</main>
-
-<footer>
-    <div class="container">
-        <p>&copy; Fit Kwick.</p>
-        <p>A Ochieng & Co Comapny</p>
-    </div>
-</footer>
-
-<script src="/js/script.js"></script>
-</body>
-</html>
+<p>Manage your gym memberships and bookings with ease.</p>
+<!-- Links!!!!  -->
+<div class="action-buttons">
+    <!-- Link to add a new customer -->
+    <a href="/customers/add" class="btn">Add a new customer</a>
+    <!-- Link to make a new booking -->
+    <a href="/bookings/add" class="btn">Make a new booking</a>
+    <!-- Link to view all customers -->
+    <a href="/customers" class="btn">View all customers</a>
+    <!-- Link to view all bookings -->
+    <a href="/bookings" class="btn">View all bookings</a>
+</div>

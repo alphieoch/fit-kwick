@@ -1,0 +1,31 @@
+<form id="addCustomerForm" action="/customers/add" method="POST" class="mui-form">
+    <div class="mui-textfield mui-textfield--float-label">
+        <input type="text" id="name" name="name" required>
+        <label for="name">Name</label>
+    </div>
+    <div class="mui-textfield mui-textfield--float-label">
+        <input type="text" id="address" name="address" required>
+        <label for="address">Address</label>
+    </div>
+    <div class="mui-select">
+        <select id="membership_type" name="membership_type" required>
+            <option value="">Select membership type</option>
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+        </select>
+        <label for="membership_type">Membership Type</label>
+    </div>
+    <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary">Add Customer</button>
+</form>
+
+<script>
+    document.getElementById('addCustomerForm').addEventListener('submit', function(event) {
+        var form = this;
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    }, false);
+</script>

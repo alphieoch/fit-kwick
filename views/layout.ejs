@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Layouts -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the page title dynamically based on the 'title' variable -->
+    <title>Fit Kwick<%= locals.title ? ' - ' + title : '' %></title>
+    <!-- Include Roboto font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Include custom stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Fit Kwick</h1>
+        <nav>
+            <ul>
+                <!-- Navigation menu items -->
+                <li><a href="/">Home</a></li>
+                <li><a href="/customers">Customers</a></li>
+                <li><a href="/bookings">Bookings</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <%- body %>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; Fit Kwick.</p>
+        <p>A Ochieng & Co Comapny</p>
+    </div>
+</footer>
+
+<!-- Include custom JavaScript file -->
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<form id="addBookingForm" action="/bookings/add" method="POST" class="mui-form">
+    <div class="mui-select">
+        <select id="customer_id" name="customer_id" required>
+            <option value="">Select customer</option>
+            <% customers.forEach(customer => { %>
+                <option value="<%= customer.customer_id %>"><%= customer.name %></option>
+            <% }); %>
+        </select>
+        <label for="customer_id">Customer</label>
+    </div>
+    <div class="mui-textfield mui-textfield--float-label">
+        <input type="date" id="date" name="date" required>
+        <label for="date">Date</label>
+    </div>
+    <div class="mui-textfield mui-textfield--float-label">
+        <input type="time" id="time" name="time" required>
+        <label for="time">Time</label>
+    </div>
+    <div class="mui-select">
+        <select id="activity_type" name="activity_type" required>
+            <option value="">Select activity type</option>
+            <option value="gym">Gym</option>
+            <option value="swim">Swim</option>
+        </select>
+        <label for="activity_type">Activity Type</label>
+    </div>
+    <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary">Make Booking</button>
+</form>
+
+<script>
+    document.getElementById('addBookingForm').addEventListener('submit', function(event) {
+        var form = this;
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    }, false);
+</script>
